@@ -1,4 +1,4 @@
-package model
+package main 
 
 type Configuration struct {
 	Port         int                `json:"port"`

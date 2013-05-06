@@ -1,4 +1,4 @@
-package model
+package main 
 
 type Payload struct {
 	Before     string     `json:"before"`

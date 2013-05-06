@@ -4,14 +4,13 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/CSUA/pushy/model"
 	"log"
 	"net/http"
 	"os"
 	"os/exec"
 )
 
-var config model.Configuration
+var config Configuration
 var configPath *string = flag.String("config", "/etc/pushy.json", "path to configuration JSON file")
 var logPath *string = flag.String("log", "/var/log/pushy.log", "path to log file")
 
@@ -61,7 +60,7 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	payloadData := []byte(r.FormValue("payload"))
-	var payload model.Payload
+	var payload Payload
 	json.Unmarshal(payloadData, &payload)
 
 	if repoConfig := config.FindRepositoryConfig(payload.Repository); repoConfig != nil {
@@ -73,7 +72,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func pull(repositoryConfig *model.RepositoryConfig) {
+func pull(repositoryConfig *RepositoryConfig) {
 	// save the present working directory; cd back to it once this method is done
 	log.Printf("Changing working directory to %s", repositoryConfig.Path)
 	if oldWorkingDirectory, err := os.Getwd(); err != nil {

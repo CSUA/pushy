@@ -9,8 +9,12 @@
 Make sure to add `$SOMEWHERE/pushy` to your `GOPATH` and add `$SOMEWHERE/pushy/bin` to your PATH as well.
 
 # Running Pushy (development)
+     sudo go run *.go --config pushy.json --log pushy.log
+
+OR
+
      go install
-	 sudo pushy --config pushy.json --log pushy.log
+      sudo pushy --config pushy.json --log pushy.log
 
 pushy requires root for now, but only because there's no logic in place to not setuid/setgid from the user/group names it reads from pushy.json.
 
