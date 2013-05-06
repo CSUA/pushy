@@ -1,5 +1,7 @@
 {
   "port": 8001,
+  "user": "www-data",
+  "group": "outreach",
   "repositories": [{
     "url": "https://github.com/CSUA/CSUA-Website",
     "path": "/csua/www",

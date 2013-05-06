@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/CSUA/pushy/model"
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/CSUA/pushy/model"
 	"log"
 	"net/http"
 	"os"
@@ -48,6 +48,20 @@ func main() {
 	if _, err := exec.LookPath("git"); err != nil {
 		log.Fatalf("No git binary found. error: %v", err)
 	}
+
+	// Get uid of target user
+	uid, err := GetUidByName(config.User)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Get gid of target group
+	gid, err := GetGidByName(config.Group)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Printf("UID: %d, GID: %d", uid, gid)
 
 	// Start serving
 	http.HandleFunc("/", handler)
