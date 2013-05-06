@@ -1,0 +1,10 @@
+POST /1a70n8s1 HTTP/1.1
+X-Github-Event: push
+User-Agent: GitHub Hookshot 37e00ce
+Host: requestb.in
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 1922
+Connection: close
+Accept: */*
+
+payload=%7B%22ref%22%3A%22refs%2Fheads%2Fmaster%22%2C%22after%22%3A%222c45f88af18dfc55e0a29b1a9d1364c132f7c722%22%2C%22before%22%3A%222c45f88af18dfc55e0a29b1a9d1364c132f7c722%22%2C%22created%22%3Afalse%2C%22deleted%22%3Afalse%2C%22forced%22%3Afalse%2C%22compare%22%3A%22https%3A%2F%2Fgithub.com%2FCSUA%2Fpushy%2Fcompare%2F2c45f88af18d...2c45f88af18d%22%2C%22commits%22%3A%5B%5D%2C%22head_commit%22%3A%7B%22id%22%3A%222c45f88af18dfc55e0a29b1a9d1364c132f7c722%22%2C%22distinct%22%3Atrue%2C%22message%22%3A%22Listen+for+hooks+and+run+a+simple+update%22%2C%22timestamp%22%3A%222013-05-05T19%3A52%3A16-07%3A00%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FCSUA%2Fpushy%2Fcommit%2F2c45f88af18dfc55e0a29b1a9d1364c132f7c722%22%2C%22author%22%3A%7B%22name%22%3A%22Andrew+Toulouse%22%2C%22email%22%3A%22andrew%40atoulou.se%22%2C%22username%22%3A%22toulouse%22%7D%2C%22committer%22%3A%7B%22name%22%3A%22Andrew+Toulouse%22%2C%22email%22%3A%22andrew%40atoulou.se%22%2C%22username%22%3A%22toulouse%22%7D%2C%22added%22%3A%5B%22.gitignore%22%2C%22model%2Fconfig.go%22%2C%22model%2Fpayload.go%22%2C%22pushy.go%22%2C%22pushy.json.example%22%5D%2C%22removed%22%3A%5B%5D%2C%22modified%22%3A%5B%5D%7D%2C%22repository%22%3A%7B%22id%22%3A9878149%2C%22name%22%3A%22pushy%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FCSUA%2Fpushy%22%2C%22description%22%3A%22Simple+GitHub+Repository+Hook+Server+in+golang%22%2C%22homepage%22%3A%22%22%2C%22watchers%22%3A0%2C%22stargazers%22%3A0%2C%22forks%22%3A0%2C%22fork%22%3Afalse%2C%22size%22%3A120%2C%22owner%22%3A%7B%22name%22%3A%22CSUA%22%2C%22email%22%3Anull%7D%2C%22private%22%3Afalse%2C%22open_issues%22%3A0%2C%22has_issues%22%3Atrue%2C%22has_downloads%22%3Atrue%2C%22has_wiki%22%3Atrue%2C%22language%22%3A%22Go%22%2C%22created_at%22%3A1367808424%2C%22pushed_at%22%3A1367808766%2C%22master_branch%22%3A%22master%22%2C%22organization%22%3A%22CSUA%22%7D%2C%22pusher%22%3A%7B%22name%22%3A%22none%22%7D%7D
