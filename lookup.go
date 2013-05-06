@@ -32,6 +32,7 @@ func GetUidByName(name string) (uid int, err error) {
 	return
 }
 
+// TODO: properly attribute http://golang.org/src/pkg/os/user/lookup_unix.go (BSD-style: http://golang.org/LICENSE)
 func GetGidByName(name string) (gid int, err error) {
 	var group C.struct_group
 	var result *C.struct_group
