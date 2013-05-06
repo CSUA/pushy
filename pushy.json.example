@@ -1,0 +1,8 @@
+{
+  "port": 8001,
+  "repositories": [{
+    "url": "https://github.com/CSUA/CSUA-Website",
+    "path": "/csua/www",
+    "branch": "master"
+  }]
+}
