@@ -62,3 +62,28 @@ func GetGidByName(name string) (gid int, err error) {
 	gid = int(result.gr_gid)
 	return
 }
+
+func DropPrivileges(username string, groupname string) (err error) {
+	uid, err := GetUidByName(username)
+	if err != nil {
+		return
+	}
+
+	gid, err := GetGidByName(groupname)
+	if err != nil {
+		return
+	}
+
+	err = syscall.Setgid(gid)
+	if err != nil {
+		return
+	}
+	log.Printf("Dropped group privileges")
+
+	err = syscall.Setuid(uid)
+	if err != nil {
+		return
+	}
+	log.Printf("Dropped user privileges")
+	return
+}

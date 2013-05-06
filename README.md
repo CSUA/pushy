@@ -6,10 +6,13 @@
      cd pushy/src/github.com/CSUA
      git clone git@github.com:CSUA/pushy.git
 
-Make sure to add `$SOMEWHERE/pushy` to your `GOPATH`. If you want to use the binary produced after `go install`, then add `$SOMEWHERE/pushy/bin` to your PATH as well.
+Make sure to add `$SOMEWHERE/pushy` to your `GOPATH` and add `$SOMEWHERE/pushy/bin` to your PATH as well.
 
 # Running Pushy (development)
-     go run pushy.go  --config pushy.json --log pushy.log
+     go install
+	 sudo pushy --config pushy.json --log pushy.log
+
+pushy requires root for now, but only because there's no logic in place to not setuid/setgid from the user/group names it reads from pushy.json.
 
 # Installing Pushy
      go install github.com/CSUA/pushy
