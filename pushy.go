@@ -48,11 +48,6 @@ func main() {
 		log.Fatalf("No git binary found. error: %v", err)
 	}
 
-	// Drop Privileges
-	if err := DropPrivileges(config.User, config.Group); err != nil {
-		log.Fatal(err)
-	}
-
 	// Start serving
 	http.HandleFunc("/", handler)
 	http.ListenAndServe(fmt.Sprintf(":%d", config.Port), nil)
@@ -61,7 +56,9 @@ func main() {
 func handler(w http.ResponseWriter, r *http.Request) {
 	payloadData := []byte(r.FormValue("payload"))
 	var payload Payload
-	json.Unmarshal(payloadData, &payload)
+	if err := json.Unmarshal(payloadData, &payload); err != nil {
+		log.Printf("WARNING: Could not Unmarshall JSON payload, did you make sure to tell GitHub to use application/x-www-form-urlencoded ?")
+	}
 
 	if repoConfig := config.FindRepositoryConfig(payload.Repository); repoConfig != nil {
 		log.Printf("Repository configuration found: %+v", repoConfig)

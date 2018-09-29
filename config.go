@@ -2,8 +2,6 @@ package main
 
 type Configuration struct {
 	Port         int                `json:"port"`
-	User         string             `json:"user"`
-	Group        string             `json:"group"`
 	Repositories []RepositoryConfig `json:"repositories"`
 }
 
